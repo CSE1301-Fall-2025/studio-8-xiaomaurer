@@ -3,6 +3,10 @@ package studio8;
 import support.cse131.NotYetImplementedException;
 
 public class Question {
+	private String prompt;
+	private String answer;
+	private int points;
+
 	
 	/**
 	 * Constructor
@@ -11,7 +15,9 @@ public class Question {
 	 * @param points
 	 */
 	public Question(String prompt, String answer, int points) {
-		throw new NotYetImplementedException();
+		this.prompt=prompt;
+		this.answer=answer;
+		this.points=points;
 	}
 	
 	/**
@@ -31,7 +37,7 @@ public class Question {
 		if(answer.equals(givenAnswer)) { //String comparison
 			return this.points;
 		} else {
-			return 0;
+			return this.points=0;
 		}
 	}
 	
@@ -40,7 +46,7 @@ public class Question {
 	 * @return int points
 	 */
 	public int getPoints() {
-		throw new NotYetImplementedException();
+		return points;
 	}
 	
 	/**
@@ -48,10 +54,18 @@ public class Question {
 	 * @return String answer
 	 */
 	public String getAnswer() {
-		throw new NotYetImplementedException();
+		return answer;
 	}
 	
 	public static void main(String[] args) {
 		// TODO: Create a Question object of your own!
+		//Question Q1 = new Question("what is 1+1", "2", 4);
+		Question q131 = new Question("What is a hot dog?", "A sandwich", 131);
+		q131.displayPrompt();
+		q131.checkAnswer("A sandwich");
+		q131.checkAnswer("NOt A sandwich");
+		System.out.println(q131.checkAnswer("NOt A sandwich"));
+
+
 	}
 }
